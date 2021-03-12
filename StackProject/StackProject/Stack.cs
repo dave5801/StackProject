@@ -14,12 +14,18 @@ namespace StackProject
             theStack.Add(newNode);
         }
 
-        public void pop() { }
-
-        public void top() 
-        {
+        public int pop() 
+        { 
             var p = theStack[theStack.Count - 1];
             theStack.RemoveAt(theStack.Count - 1);
+            return p.getValue();
+        }
+
+        public int top() 
+        {
+            var p = theStack[theStack.Count - 1];
+            
+            return p.getValue();
         }
 
         public void printContents() 
