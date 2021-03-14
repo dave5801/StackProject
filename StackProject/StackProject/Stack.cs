@@ -11,28 +11,40 @@ namespace StackProject
 
         public void push(Node newNode) 
         {
+
             theStack.Add(newNode);
         }
 
         public int pop() 
-        { 
-            var p = theStack[theStack.Count - 1];
+        {
+
+            int p = 0;
+
+            if (theStack.Count == 0) 
+            {
+                throw new StackNotInitializedException("Stack not initialized, push some element first");
+            }
+
+            
+            p = theStack[theStack.Count - 1]._value;
             theStack.RemoveAt(theStack.Count - 1);
-            return p.getValue();
+
+                        
+            return p;
         }
 
         public int top() 
         {
             var p = theStack[theStack.Count - 1];
-            
-            return p.getValue();
+
+            return p._value;
         }
 
         public void printContents() 
         {
             foreach (var element in theStack) 
             {
-                Console.WriteLine(element.getValue());
+                Console.WriteLine(element._value);
             }
         }
     }

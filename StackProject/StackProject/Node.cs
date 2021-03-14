@@ -6,8 +6,8 @@ namespace StackProject
 {
     public class Node
     {
-        private readonly int _value;
-        private Node _next;
+        public readonly int _value;
+        public Node _next;
 
         public Node(int value, Node next = null) 
         {
@@ -15,10 +15,6 @@ namespace StackProject
             _next = next;
         }
 
-        public int getValue() 
-        {
-            return _value;
-        }
 
     }
 }
