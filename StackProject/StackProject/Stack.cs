@@ -35,9 +35,22 @@ namespace StackProject
 
         public int top() 
         {
-            var p = theStack[theStack.Count - 1];
 
-            return p._value;
+            try
+            {
+                var p = theStack[theStack.Count - 1];
+
+                return p._value;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                throw new StackNotInitializedException("Argument out of range, Stack not initialized, push some element first");
+            }
+            finally 
+            {
+                Console.WriteLine("No exceptions were caught");
+            }
+
         }
 
         public void printContents() 
